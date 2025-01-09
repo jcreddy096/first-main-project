@@ -25,14 +25,16 @@ const UserDetails: React.FC = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null); 
 
   const fetchUser = async (userId: string) => {
     setLoading(true);
+    setError(null); 
     try {
       const response = await axios.get(`${URL}/${userId}`);
       setUser(response.data);
     } catch {
-      // Handle errors here if needed
+      setError('Failed to fetch user details. Please try again later.'); 
     }
     setLoading(false);
   };
@@ -51,13 +53,22 @@ const UserDetails: React.FC = () => {
     );
   }
 
+  if (error) {
+    return (
+      <div className="container">
+        <h1>{error}</h1>
+        <button className="btn-back" onClick={() => navigate('/user')}>Back</button>
+      </div>
+    );
+  }
+
   if (!user) {
     return null;
   }
 
   return (
     <div className="container">
-      <button className="btn-back" onClick={() => navigate('/users')}>Back</button>
+      <button className="btn-back" onClick={() => navigate('/user')}>Back</button>
       <h1>User Details</h1>
       <table className="user-details-table">
         <thead>
