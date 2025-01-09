@@ -1,0 +1,72 @@
+
+body {
+   background-color: #f7f7f7;
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+}
+
+.container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.btn-logout {
+   position: absolute;
+   top: 20px;
+   right: 20px;
+   padding: 10px 15px;
+   background-color: #dc3545;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+   background-color: #c82333;
+}
+
+.headding {
+   font-size: 40px;
+   font-style: italic;
+   color: rgb(28, 4, 28);
+   margin-bottom: 20px;
+}
+
+.box {
+   background: rgba(95, 105, 102, 0.26);
+   border: none;
+   border-radius: 15px;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   height: 50vh;
+   width: 80vw;
+   gap: 20px;
+}
+
+.btn-users, .btn-posts {
+   width: 150px;
+   padding: 20px;
+   font-size: 25px;
+   margin: 5px 0;
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+   background: rgba(29, 86, 29, 0.67);
+   color: white;
+   transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+.btn-users:hover, .btn-posts:hover {
+   background-color: green;
+   font-size: 35px;
+}
